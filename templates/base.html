@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Dark souls dices</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/css/bootstrap-reboot.min.css')}}">
+
+    <script src="{{url_for('static', filename='vendor/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!--boostrap mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-dark">
+        <h1 class="Navbar-text">Dark Souls Dices</h1>
+    </nav>
+    <!-- /NAVBAR -->
+    <div>
+      <div>
+          <div class='container section'>
+            <div class="row body-email-val">
+              {% if warn_base %}
+                <p class="errorlist"> {{ warn_base }} </p>
+              {% endif %}
+              {% block content %}
+              {% endblock %}
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </body>
+</html>
